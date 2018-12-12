@@ -127,6 +127,10 @@ while running is True:
     controls=False
     sense.show_message('SCORE = ' + str(score), text_colour=red, back_colour=white)
     running=False
+    sense.clear()
+    
+
+
     
 
 
