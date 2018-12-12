@@ -1,13 +1,21 @@
 import time
+import random
 from sense_hat import SenseHat
 
 sense = SenseHat()
 
-x=1
-y=4
+x=random.randint(0, 7)
+y=random.randint(0, 7)
 
-movex=True
-movey=True
+if x > 6:
+  movex=False
+else:
+  movex=True
+
+if y > 6:
+  movey=False
+else:
+  movey=True
 
 while True:
   if movex is True and movey is True:
