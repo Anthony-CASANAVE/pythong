@@ -6,6 +6,7 @@ sense = SenseHat()
 
 x=random.randint(0, 7)
 y=random.randint(0, 7)
+s=0.5
 
 if x > 6:
   movex=False
@@ -21,9 +22,10 @@ while True:
   if movex is True and movey is True:
     x+=1
     y+=1
+    t-=0.05
     sense.clear(0,0,0)
     sense.set_pixel(x,y,255,255,255)
-    time.sleep(0.1)
+    time.sleep(s)
     if x > 6:
       movex=False
     if y > 6:
@@ -34,7 +36,7 @@ while True:
     y-=1
     sense.clear(0,0,0)
     sense.set_pixel(x,y,255,255,255)
-    time.sleep(0.1)
+    time.sleep(s)
     if x > 6:
       movex=False
     if y < 1:
@@ -45,7 +47,7 @@ while True:
     y-=1
     sense.clear(0,0,0)
     sense.set_pixel(x,y,255,255,255)
-    time.sleep(0.1)
+    time.sleep(s)
     if x < 1:
       movex=True
     if y < 1:
@@ -56,7 +58,7 @@ while True:
     y+=1
     sense.clear(0,0,0)
     sense.set_pixel(x,y,255,255,255)
-    time.sleep(0.1)
+    time.sleep(s)
     if x < 1:
       movex=True
     if y > 6:
