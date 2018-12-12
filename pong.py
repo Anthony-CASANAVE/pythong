@@ -4,16 +4,21 @@ from sense_hat import SenseHat
 
 sense = SenseHat()
 
-x=random.randint(1, 6)
+x=random.randint(4, 6)
 y=random.randint(1, 6)
 
 
 movex=random.choice([True, False])
 movey=random.choice([True, False])
 
-s=0.1
+s=0.3
 
-while True:
+running=True
+red=(255,0,0)
+
+score=0
+
+while running is True:
   if movex is True and movey is True:
     x+=1
     y+=1
@@ -58,4 +63,11 @@ while True:
       movex=True
     if y > 6:
       movey=False
+      
+  if x is 7:
+    score+=1
+      
+  if x is 0:
+    sense.show_message('SCORE = ' + str(score), text_colour=red)
+    running=False
 
