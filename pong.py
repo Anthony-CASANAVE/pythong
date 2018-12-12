@@ -20,6 +20,8 @@ controls=True
 red=(255,0,0)
 white=(254,254,254)
 
+sense.show_message("3...2...1...GO!", text_colour=red, back_colour=white)
+
 score=0
 
 pong=random.randint(2, 5)
@@ -57,6 +59,8 @@ def pushed_down(event):
     global controls
     if event.action != ACTION_PRESSED and controls is True:
       pong = clamp(pong + 1)
+      
+
 
 while running is True:
   
@@ -123,5 +127,8 @@ while running is True:
     controls=False
     sense.show_message('SCORE = ' + str(score), text_colour=red, back_colour=white)
     running=False
+    
+
+
     
 
