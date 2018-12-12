@@ -3,8 +3,6 @@ import random
 from sense_hat import SenseHat, ACTION_PRESSED, ACTION_RELEASED, ACTION_HELD
 from signal import pause
 
-#Hissss !
-
 sense = SenseHat()
 
 x=random.randint(4, 6)
@@ -73,7 +71,8 @@ while running is True:
   if movex is True and movey is True:
     x+=1
     y+=1
-    s-=0.05
+    if s > 0.1:
+      s-=0.01
     paint()
     time.sleep(s)
     if x > 6:
@@ -84,6 +83,8 @@ while running is True:
   elif movex is True and movey is False:
     x+=1
     y-=1
+    if s > 0.1:
+      s-=0.01
     paint()
     time.sleep(s)
     if x > 6:
@@ -94,6 +95,8 @@ while running is True:
   elif movex is False and movey is False:
     x-=1
     y-=1
+    if s > 0.1:
+      s-=0.01
     paint()
     time.sleep(s)
     if x < 1:
@@ -104,6 +107,8 @@ while running is True:
   elif movex is False and movey is True:
     x-=1
     y+=1
+    if s > 0.1:
+      s-=0.01
     paint()
     time.sleep(s)
     if x < 1:
@@ -118,4 +123,5 @@ while running is True:
     controls=False
     sense.show_message('SCORE = ' + str(score), text_colour=red, back_colour=white)
     running=False
+    
 
